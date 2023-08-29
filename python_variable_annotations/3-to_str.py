@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Defines a function to_str that converts a float to its string representation."""
+"""Function to_str that converts a float to its string representation."""
 
 
 def to_str(n: float) -> str:
