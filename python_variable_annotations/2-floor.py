@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Script takes a float and returns the floor."""
+"""This module provides a function to calculate the floor of a float."""
+
 
 def floor(n: float) -> int:
-    """
-    Return the floor of a float.
-    """
+    """The floor value of the input float."""
     z = int(n)
     return z
