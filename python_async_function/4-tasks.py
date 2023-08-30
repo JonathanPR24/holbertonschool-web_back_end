@@ -1,23 +1,22 @@
 #!/usr/bin/env python3
-"""
-Script containing the task_wait_n function.
-"""
-
+"""Script that returns the list of all the delays"""
 import asyncio
-from typing import List, Coroutine
+from typing import List
+
 
 task_wait_random = __import__('3-tasks').task_wait_random
 
-def task_wait_n(n: int, max_delay: int) -> Coroutine:
-    """
-    Returns a list of asyncio.Tasks that run the task_wait_random coroutine.
 
-    Args:
-        n (int): The number of times to create the task.
-        max_delay (int): The maximum delay for task_wait_random.
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
+    """Returns a list of asyncio. Run the task_wait_random coroutine."""
+    delay_list: List[float] = []
+    tasks: List[asyncio.Task] = []
 
-    Returns:
-        Coroutine: A list of tasks to run the task_wait_random coroutine.
-    """
-    tasks = [task_wait_random(max_delay) for _ in range(n)]
-    return asyncio.gather(*tasks)
+    for _ in range(n):
+        tasks.append(task_wait_random(max_delay))
+
+    for task in asyncio.as_completed(tasks):
+        delay = await task
+        delay_list.append(delay)
+
+    return delay_list
