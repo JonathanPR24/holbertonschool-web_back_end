@@ -5,6 +5,7 @@ import asyncio
 import random
 from typing import AsyncGenerator
 
+
 # Define an asynchronous generator coroutine
 async def async_generator() -> AsyncGenerator[float, None]:
     """Generator of random numbers with delays"""
