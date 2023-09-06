@@ -1,2 +1,2 @@
-// a script that list all documents in the collecrion school
-db.school.fin();
+// List all documents with name="Holberton school" in the collection school
+db.school.find( { name: " Holberton school" } )
