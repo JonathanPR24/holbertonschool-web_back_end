@@ -34,14 +34,18 @@ class Server:
         return pagination[range[0]:range[1]]
 
     def index_range(self, page: int, page_size: int) -> Tuple[int, int]:
-        """Return a tuple representing the start and end index for pagination"""
+        """Return a tuple representing the start and
+        end index for pagination
+        """
         end: int = page * page_size
         start: int = end - page_size
 
         return start, end
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
-        """Retrieve data for hypermedia pagination and return it as a dictionary"""
+        """Retrieve data for hypermedia pagination and
+        return it as a dictionary
+    """
 
         data = []
         try:
