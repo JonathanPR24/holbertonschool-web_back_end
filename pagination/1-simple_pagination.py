@@ -30,8 +30,8 @@ class Server:
         Retrieve a specific page of data.
         """
         # Validate input arguments
-        assert isinstance(page, int) and page > 0, "Page must be a positive integer."
-        assert isinstance(page_size, int) and page_size > 0, "Page size must be a positive integer."
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
 
         # Calculate the start and end indexes for the requested page
         start_index, end_index = index_range(page, page_size)
