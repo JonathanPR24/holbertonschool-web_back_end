@@ -1,10 +1,11 @@
+/* eslint-disable */
 export default function taskBlock(trueOrFalse) {
-  let task = false; // Use let instead of var
-  let task2 = true;  // Use let instead of var
+  const task = false;
+  const task2 = true;
 
   if (trueOrFalse) {
-    task = true; // Assign values directly without re-declaring
-    task2 = false; // Assign values directly without re-declaring
+    const task = true; // Block-scoped variable, does not affect outer task
+    const task2 = false; // Block-scoped variable, does not affect outer task2
   }
 
   return [task, task2];
