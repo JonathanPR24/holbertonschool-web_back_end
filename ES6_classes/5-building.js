@@ -1,15 +1,19 @@
 /* eslint-disable */
-
-import Building from './5-building.js';
-
-const b = new Building(100);
-console.log(b);
-
-class TestBuilding extends Building {
-  evacuationWarningMessage() {
-    return 'Evacuate the building!';
+export default class Building {
+    constructor(sqft) {
+      if (
+        Object.getPrototypeOf(this) !== Building.prototype
+        && typeof this.evacuationWarningMessage !== 'function'
+      ) {
+        throw Error(
+          'Class extending Building must override evacuationWarningMessage',
+        );
+      }
+  
+      this._sqft = sqft;
+    }
+  
+    get sqft() {
+      return this._sqft;
+    }
   }
-}
-
-const testBuilding = new TestBuilding(200);
-console.log(testBuilding.evacuationWarningMessage());
