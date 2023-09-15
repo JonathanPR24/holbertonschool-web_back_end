@@ -1,12 +1,13 @@
-// 6-sky_high.js
-
-import Building from './5-building.js';
+import Building from './5-building';
 
 export default class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
-    super(sqft); // Call the constructor of the parent class
-
+    super(sqft);
     this._floors = floors;
+  }
+
+  get sqft() {
+    return this._sqft;
   }
 
   get floors() {
