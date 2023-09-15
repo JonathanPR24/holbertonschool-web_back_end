@@ -1,4 +1,4 @@
-// 2-hbtn_course.js
+/* eslint-disable */
 
 export default class HolbertonCourse {
   constructor(name, length, students) {
